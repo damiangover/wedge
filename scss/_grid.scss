@@ -1,0 +1,9 @@
+@import '_config';
+@import '_type-scale';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33vw, 1fr));
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}

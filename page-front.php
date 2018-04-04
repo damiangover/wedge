@@ -3,7 +3,7 @@
 get_header();
 ?>
 
-<main>
+<main class="grid">
     <?php
         $args = array(
             'parent' => $post->ID,
