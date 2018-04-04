@@ -1,0 +1,31 @@
+{
+  "name": "wedge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damiangover/wedge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damiangover/wedge/issues"
+  },
+  "homepage": "https://github.com/damiangover/wedge#readme",
+	"devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "browser-sync": "^2.23.6",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4"
+  },
+  "dependencies": {}
+}
