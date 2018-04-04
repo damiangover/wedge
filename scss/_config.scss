@@ -14,3 +14,9 @@ $for-large-view: $max-reading-width;
 
 $hero-colour: #383F51;
 $hero-font-colour: #FFF;
+
+@mixin break($breakpoint) {
+  @media only screen and (min-width: #{$breakpoint}) {
+      @content;
+  }
+}
