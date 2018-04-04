@@ -1,0 +1,54 @@
+@import "_config";
+
+@mixin break($breakpoint) {
+    @media only screen and (min-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+:root {
+    background-color: $hero-colour;
+    font-size: $base-font-size;
+}
+
+html {
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    color: $base-font-colour;
+    font-weight: $base-font-weight;
+    background: $background-colour;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+    vertical-align: baseline;
+    background: $background-colour;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cce;
+    margin: 1em 0;
+    padding: 0;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
