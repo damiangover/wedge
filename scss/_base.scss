@@ -1,11 +1,5 @@
 @import "_config";
 
-@mixin break($breakpoint) {
-    @media only screen and (min-width: #{$breakpoint}) {
-        @content;
-    }
-}
-
 :root {
     background-color: $hero-colour;
     font-size: $base-font-size;
