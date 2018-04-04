@@ -1,6 +1,27 @@
-.tile {
+@mixin center-flex {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-evenly;
+}
+
+@mixin anchor {
+  text-decoration: none;
+  color: $base-font-colour;
+
+  &:visited {
+    color: $base-font-colour;
+  }
+
+  &:hover {
+    color: $interaction-colour;
+  }
+}
+
+.front--tile {
+  @include center-flex;
+  
+  &-link {
+    @include anchor;
+  }
 }
