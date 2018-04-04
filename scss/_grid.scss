@@ -3,15 +3,13 @@
 
 .grid {
   display: grid;
-  grid-auto-flow: row dense;
-  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 
   min-height: 100vh;
   overflow: hidden;
 
   @include break($for-large-view) {
-    display: grid;
-    grid-auto-flow: column dense;
-    grid-template-columns: repeat(autofit, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
   }
 }
