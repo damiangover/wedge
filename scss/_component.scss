@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 @mixin anchor {
@@ -19,9 +19,15 @@
 }
 
 .front--tile {
-  @include center-flex;
-  
-  &-link {
+  @include center-flex();
+
+  & a {
     @include anchor;
+  }
+  
+  &-excerpt {
+    position: absolute;
+    width: 50%;
+    visibility: hidden;
   }
 }
