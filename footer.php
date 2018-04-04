@@ -4,33 +4,7 @@
 <script type="text/javascript" src="//cdn.rawgit.com/icons8/bower-webicon/v0.10.7/jquery-webicon.min.js"></script>
 <script src="js/main.js"></script>
 
-<!--<script>-->
-<!--    window.ga = function () {-->
-<!--        ga.q.push(arguments)-->
-<!--    };-->
-<!--    ga.q = [];-->
-<!--    ga.l = +new Date;-->
-<!--    ga('create', 'UA-XXXXX-Y', 'auto');-->
-<!--    ga('send', 'pageview')-->
-<!--</script>-->
-<!--<script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
-<script>
-    window.addEventListener("beforeunload", function () {
-        console.log("Calling animate out");
-        $("main").addClass("animate-out");
-    });
+<?php wp_footer()?>
 
-    $(document).ready(function() {
-        setTimeout(function(){
-            $('#pre').addClass('loaded');
-        }, 5000);
-
-        $('#post').addClass('loading');
-    });
-</script>
-
-<?php wp_footer() ?>
-
-</div>
 </body>
 </html>
