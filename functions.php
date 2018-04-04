@@ -22,12 +22,13 @@ function register_custom_menus() {
 
 add_action('init', 'register_custom_menus');
 
-function register_stylesheets() {
+function register_assets() {
     wp_enqueue_style('ce_style', get_stylesheet_uri());
     wp_enqueue_style('ce_font', 'https://fonts.googleapis.com/css?family=Montserrat:100,300,400');
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array ( 'jquery' ), 1.1, false);
 }
 
-add_action('wp_enqueue_scripts', 'register_stylesheets');
+add_action('wp_enqueue_scripts', 'register_assets');
 
 add_post_type_support( 'page', 'excerpt' );
 
