@@ -79,11 +79,6 @@
   & a {
     @include anchor($base-font-colour, $interaction-colour);
   }
-
-  &:hover {
-    background-color: #ccc;
-    background-color: $background-colour;
-  }
 }
 
 .move {
@@ -99,6 +94,10 @@
   transition: all 0.2s linear;
 }
 
-a.light {
-  @include anchor(#eee, $interaction-colour);
+.light {
+  color: #eee !important;
+}
+
+.white {
+  background-color: #EEE !important;
 }

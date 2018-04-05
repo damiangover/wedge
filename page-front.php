@@ -31,10 +31,9 @@ get_header();
         
         <div class="front--tile">
             <header class="front--tile-header">
-                <a href="<?php echo get_permalink($page->ID); ?>" class="light" rel="bookmark" title="<?php echo $page->post_title; ?>">
-                    <?php echo $page->post_title; ?>
-                </a>
+                <span class="light"><?php echo $page->post_title; ?>
             </header>
+
             <section class="front--tile-excerpt">
                 <p><?php echo $page->post_excerpt; ?></p>
                 <?php 
@@ -51,6 +50,7 @@ get_header();
                     </nav>
                 <?php } ?>
             </section>
+            
         </div>
     <?php } ?>
 </main>
