@@ -9,6 +9,8 @@ get_header();
             'parent' => $post->ID,
             'post_type' => 'page',
             'post_status' => 'publish',
+            'sort_order' => 'asc',
+            'sort_column' => 'menu_order'
         );
 
         $pages = get_pages($args);
