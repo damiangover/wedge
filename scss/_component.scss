@@ -101,3 +101,17 @@
 .white {
   background-color: #EEE !important;
 }
+
+.lift-colour {
+  background-color: $interaction-colour;
+}
+
+.line-up-text {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+
+  & p {
+    margin: 0.618rem .333rem;
+  }
+}
