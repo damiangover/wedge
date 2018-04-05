@@ -3,15 +3,14 @@
 
 .grid {
   display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: repeat(auto-fit, 1fr);
-
-  min-height: 100vh;
+  grid-template-rows: repeat(3, minmax(33.333vh, 1fr));
+  grid-template-columns: 1fr;
   overflow: hidden;
+  min-height: 100vh;
+  background-color: #EEE;
 
   @include break($for-large-view) {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(autofit, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
   }
 }
