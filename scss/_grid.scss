@@ -3,10 +3,9 @@
 
 .grid {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-
-  min-height: 100vh;
+  grid-template-rows: repeat(3, 33.333vh);
   overflow: hidden;
+  min-height: 100vh;
 
   @include break($for-large-view) {
     grid-template-columns: repeat(3, 1fr);
