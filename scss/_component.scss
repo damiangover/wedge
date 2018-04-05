@@ -91,7 +91,8 @@
   z-index: 1;  
   transform: translateY(-2rem);
   transition: all 0.2s linear;
-a.light {
-  @include anchor($background-colour, $interaction-colour);
 }
+
+a.light {
+  @include anchor(#eee, $interaction-colour);
 }
