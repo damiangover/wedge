@@ -59,7 +59,7 @@
   }
 
   & a {
-    @include anchor;
+    @include anchor($base-font-colour, $interaction-colour);
   }
 
   &:hover {

@@ -31,7 +31,7 @@ get_header();
         
         <div class="front--tile">
             <header class="front--tile-header">
-                <a href="<?php echo get_permalink($page->ID); ?>" rel="bookmark" title="<?php echo $page->post_title; ?>">
+                <a href="<?php echo get_permalink($page->ID); ?>" class="light" rel="bookmark" title="<?php echo $page->post_title; ?>">
                     <?php echo $page->post_title; ?>
                 </a>
             </header>
@@ -42,7 +42,7 @@ get_header();
                     foreach ($pages_second_level as $sub_page) { 
                 ?>
                     <nav>
-                        <a href="<?php echo get_permalink($sub_page->ID); ?>" class="link" rel="bookmark" title="<?php echo $sub_page->post_title; ?>">
+                        <a href="<?php echo get_permalink($sub_page->ID); ?>" rel="bookmark" title="<?php echo $sub_page->post_title; ?>">
                             <p>
                                 <small><?php echo '0'.$count; $count++ ?></small>
                                 <?php echo $sub_page->post_title; ?>
