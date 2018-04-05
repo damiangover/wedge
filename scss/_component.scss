@@ -28,19 +28,19 @@
     grid-row: 5 / 6;
     transition: all 0.2s linear;
     @include center-flex();
+    font-size: scale-text(3);
   }
   
   &-excerpt {
+    font-size: scale-text(0);    
     grid-row: 6 / 9;
     opacity: 0;
     z-index: -1;
-    margin: 2rem 3rem;
+    margin: 0 3rem;
   }
 
   & nav {
-    display: flex;
-    flex-flow: column nowrap;
-    align-self: center;
+    font-size: scale-text(1);
 
     & ul {
       list-style: none;
@@ -68,7 +68,7 @@
 }
 
 .move {
-  transform: translateZ(1rem);
+  transform: translateY(-2rem);
   transition: all 0.2s linear;
   z-index: 1;
 }
@@ -77,5 +77,5 @@
   opacity: 1;
   z-index: 1;  
   transform: translateY(-2rem);
-  transition: all 0.3s ease-in;
+  transition: all 0.2s linear;
 }
