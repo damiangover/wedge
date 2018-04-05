@@ -20,45 +20,93 @@
   }
 }
 
-.front--tile {  
-  display: grid;
-  background-color: $hero-colour;
-  width: 100%;
-  
+@mixin highlight-tile($colour) {
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: $colour;
+    transform: translateX(0.125rem);
+    transition: all 0.2s linear;
+
+    @include break($for-large-view) {
+      transform: translateY(-0.125rem);
+    }
+  }
+}
+
+.front--tile {
   @include break($for-large-view) {
-    grid-template-rows: repeat(10, 10vh);
+    grid-template-rows: repeat(5, 20vh);
+    grid-template-columns: 1fr;
     width: 100%;
     height: 100%;
   }
+  @include highlight-tile(lighten($hero-colour, 5%));
+
+  display: grid;
+  background-color: $hero-colour;
+  width: 100%;
+  user-select: none;
+  transition: all 0.2s linear;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
 
   &:nth-child(2) {
-    background-color: darken($hero-colour, 2.5%)
+    background-color: darken($hero-colour, 2.5%);
+    @include highlight-tile(lighten($hero-colour, 2.5%));
   }
 
   &:last-child {
-    background-color: darken($hero-colour, 5%)
+    background-color: darken($hero-colour, 5%);
+    @include highlight-tile(lighten($hero-colour, 5%));
   }
 
-
   & header {
-    grid-row: 5 / 6;
-    transition: all 0.2s linear;
-    @include center-flex();
-    font-size: scale-text(3);
+    @include break($for-large-view) {
+      font-size: scale-text(4);
+      grid-column: 1 / 2;
+      grid-row: 3 / span 1;
+      margin: 0 auto;
+    }
 
     @include anchor($base-font-colour, $interaction-colour);
+    align-self: center;
+    font-size: scale-text(1);
+    margin: 0 auto;
+    width: 80%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transition: all 0.2s linear;
   }
   
   &-excerpt {
-    font-size: scale-text(0);    
-    grid-row: 6 / 9;
+    @include break($for-large-view) {
+      font-size: scale-text(0);
+      grid-column: 1 / 2;
+      grid-row: 4 / span 2;
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    cursor: auto;
+    font-size: scale-text(-1);
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;   
     opacity: 0;
     z-index: -1;
-    margin: 0 3rem;
+  }
+
+  &-blurb {
+    display: flex;
+    flex-flow: column nowrap;
   }
 
   & nav {
-    font-size: scale-text(1);
+    @include break($for-large-view) {
+      font-size: scale-text(1);
+    }
+    
+    font-size: scale-text(0);
 
     & ul {
       list-style: none;
@@ -71,27 +119,31 @@
       }
     }
   }
-
-  .big {
-    font-size: scale-text(3);
-  }
-
+  
   & a {
     @include anchor($base-font-colour, $interaction-colour);
   }
 }
 
 .move {
-  transform: translateY(-2rem);
+  @include break($for-large-view) {
+    transform: translateY(-1rem);
+  }
+  transform: translateX(0.333rem);
   transition: all 0.2s linear;
-  z-index: 1;
 }
 
 .show {
+  @include break($for-large-view) {
+    transform: translateY(-3rem);
+    align-self: flex-start;
+  }
+
+  align-self: center;
   opacity: 1;
-  z-index: 1;  
-  transform: translateY(-2rem);
+  transform: translateX(0.333rem);
   transition: all 0.2s linear;
+  z-index: 1;
 }
 
 .light {
