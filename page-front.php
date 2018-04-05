@@ -30,17 +30,23 @@ get_header();
         ?>
         
         <div class="front--tile">
-            <header>
+            <header class="front--tile-header">
                 <a href="<?php echo get_permalink($page->ID); ?>" rel="bookmark" title="<?php echo $page->post_title; ?>">
-                    <h1><?php echo $page->post_title; ?></h1>
+                    <?php echo $page->post_title; ?>
                 </a>
             </header>
             <section class="front--tile-excerpt">
                 <p><?php echo $page->post_excerpt; ?></p>
-                <?php foreach ($pages_second_level as $sub_page) { ?>
+                <?php 
+                    $count = 1;
+                    foreach ($pages_second_level as $sub_page) { 
+                ?>
                     <nav>
                         <a href="<?php echo get_permalink($sub_page->ID); ?>" class="link" rel="bookmark" title="<?php echo $sub_page->post_title; ?>">
-                            <p><?php echo $sub_page->post_title; ?></p>
+                            <p>
+                                <small><?php echo '0'.$count; $count++ ?></small>
+                                <?php echo $sub_page->post_title; ?>
+                            </p>
                         </a>
                     </nav>
                 <?php } ?>
