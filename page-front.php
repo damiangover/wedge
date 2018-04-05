@@ -16,7 +16,19 @@ get_header();
         $pages = get_pages($args);
     ?>
 
-    <?php foreach ($pages as $page) { ?>
+    <?php foreach ($pages as $page) { 
+        $args = array(
+            'parent' => $page->ID,
+            'post_type' => 'page',
+            'post_status' => 'publish',
+            'sort_order' => 'asc',
+            'sort_column' => 'menu_order'
+        );
+
+        $pages_second_level = get_pages($args);
+
+        ?>
+        
         <div class="front--tile">
             <header>
                 <a href="<?php echo get_permalink($page->ID); ?>" rel="bookmark" title="<?php echo $page->post_title; ?>">
@@ -24,7 +36,14 @@ get_header();
                 </a>
             </header>
             <section class="front--tile-excerpt">
-                <?php echo $page->post_excerpt; ?>
+                <p><?php echo $page->post_excerpt; ?></p>
+                <?php foreach ($pages_second_level as $sub_page) { ?>
+                    <nav>
+                        <a href="<?php echo get_permalink($sub_page->ID); ?>" class="link" rel="bookmark" title="<?php echo $sub_page->post_title; ?>">
+                            <p><?php echo $sub_page->post_title; ?></p>
+                        </a>
+                    </nav>
+                <?php } ?>
             </section>
         </div>
     <?php } ?>
