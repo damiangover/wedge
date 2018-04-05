@@ -5,16 +5,16 @@
   align-items: center;
 }
 
-@mixin anchor {
+@mixin anchor ($primary, $secondary) {
   text-decoration: none;
-  color: $base-font-colour;
+  color: $primary;
 
   &:visited {
-    color: $base-font-colour;
+    color: $primary;
   }
 
   &:hover {
-    color: $interaction-colour;
+    color: $secondary;
   }
 }
 
