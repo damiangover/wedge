@@ -12,7 +12,7 @@
 
         $(".front--tile").hover(function () {
             $(this).children(".front--tile-excerpt").toggleClass("show");
-            $(this).children("header").toggleClass("link");
+            $(this).children("header").toggleClass("move");
         });
     });
 }(jQuery));
